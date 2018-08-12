@@ -45,7 +45,7 @@ dummies <- model_matrix(test, ~ thal - 1) %>%
   mutate(id = seq_len(n())) 
 
 test <- left_join(test, dummies) %>% 
-  select(-thal, -patient_id) # remove factor variables
+  select(-thal, patient_id) # remove factor variables
 
 # Checking
 summary(test)
