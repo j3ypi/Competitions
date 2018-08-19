@@ -2,15 +2,16 @@
 #Evaluate Performence
 #
 #Evaluation of models and decision for one model
+#ToDo
 #------------------------------------------
 
-#Models
+#Models------------------------------------
 
 Eval<-rbind(
-  h2o.auc(DL, xval = TRUE),
+  h2o.auc(DL,valid = T),
   h2o.auc(GBM, xval = TRUE),
   h2o.auc(automl_leader, xval = TRUE)
-)
+  )
 names(Eval)<-"AUC"
 rownames(Eval)<-c("DL","GBM","automl_leader")
 
