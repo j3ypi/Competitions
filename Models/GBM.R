@@ -52,12 +52,12 @@ print(gbm_gridperf1)
 GBM<- h2o.getModel(gbm_gridperf1@model_ids[[1]])
 
 #get honest estimetion-----------------------
-best_gbm_perf1 <- h2o.performance(model = best_gbm1,
+best_gbm_perf1 <- h2o.performance(model = GBM,
                                   newdata = valid)
 h2o.auc(best_gbm_perf1) 
 
 # hyperparamters for the best model ---------
-print(best_gbm1@model[["model_summary"]])
+print(GBM@model[["model_summary"]])
 
 
 
